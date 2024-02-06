@@ -1,0 +1,185 @@
+/* kosugi-maru-regular - cyrillic_japanese */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kosugi Maru';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/kosugi-maru-v14-cyrillic_japanese-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+/* nunito-regular - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/nunito-v26-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* nunito-800 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/nunito-v26-cyrillic_latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* nunito-900 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/nunito-v26-cyrillic_latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Kosugi Maru';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color:  rgb(152, 87, 165);
+    box-shadow: 0 0  10px 10px rgba(255, 255, 255, 0.482);
+    margin-bottom: 60px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+}
+
+.search {
+    height: 40px;
+    width: 80vw;
+    max-width: 300px;
+    min-width: 280px;
+    border-radius: 50px;
+    border: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+main {
+    margin-top: 120px;
+}
+
+.lesson__container {
+    width: 600px;
+    height: auto;
+    border-radius: 25px;
+    background-color: rgb(152, 87, 165);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.lesson__word {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.325);
+    padding: 10px 0;
+}
+.lesson__name {
+    font-size: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.325);
+    padding: 0 0 20px 0;
+    font-weight: bold;
+}
+.lesson__kanji {
+    width: 100px;
+}
+
+.lesson__transcription {
+    width: 200px;
+}
+
+.lesson__translation {
+    width: 200px;
+    font-family: 'Nunito';
+}
+
+
+
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .lesson__container {
+        width: auto;
+        font-size: 18px;
+    }
+    .lesson__name {
+        font-size: 25px;
+    }
+    .lesson__kanji {
+        width: 80px;
+        text-wrap: nowrap;
+    }
+    .lesson__transcription {
+        width: 150px;
+    }
+    .lesson__translation {
+        width: 150px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .lesson__container {
+        width: auto;
+        font-size: 14px;
+    }
+    .lesson__name {
+        font-size: 25px;
+    }
+    .lesson__kanji {
+        width: 60px;
+        text-wrap: nowrap;
+    }
+    .lesson__transcription {
+        width: 100px;
+    }
+    .lesson__translation {
+        width: 100px;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .lesson__container {
+        width: auto;
+        font-size: 12px;
+        text-wrap: nowrap;
+    }
+    .lesson__name {
+        font-size: 20px;
+    }
+    .lesson__kanji {
+        width: 40px;
+        text-wrap: nowrap;
+    }
+    .lesson__transcription {
+        width: 80px;
+    }
+    .lesson__translation {
+        width: 80px;
+        text-wrap: wrap;
+    }
+  }
