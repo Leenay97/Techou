@@ -1,36 +1,46 @@
 /* kosugi-maru-regular - cyrillic_japanese */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Kosugi Maru';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/kosugi-maru-v14-cyrillic_japanese-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    src: url('../fonts/kosugi-maru-v14-cyrillic_japanese-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 /* nunito-regular - cyrillic_latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/nunito-v26-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* nunito-800 - cyrillic_latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    src: url('../fonts/nunito-v26-cyrillic_latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* nunito-800 - cyrillic_latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
-    src: url('../fonts/nunito-v26-cyrillic_latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* nunito-900 - cyrillic_latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    src: url('../fonts/nunito-v26-cyrillic_latin-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* nunito-900 - cyrillic_latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 900;
-    src: url('../fonts/nunito-v26-cyrillic_latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    src: url('../fonts/nunito-v26-cyrillic_latin-900.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 * {
     box-sizing: border-box;
@@ -48,16 +58,39 @@ body {
 header {
     width: 100%;
     height: 70px;
-    background-color:  rgb(152, 87, 165);
-    box-shadow: 0 0  10px 10px rgba(255, 255, 255, 0.482);
+    background-color: rgb(152, 87, 165);
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.482);
     margin-bottom: 60px;
     position: fixed;
     display: flex;
+    z-index: 1;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     min-width: 320px;
+
+    transition: all 0.2s ease-in-out;
+    z-index: 100;
 }
+
+.header__container {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    background-image: url('logo-white.png');
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 
 .search {
     height: 40px;
@@ -72,20 +105,117 @@ header {
 
 }
 
+
+
+
 main {
     margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    width: 100vw;
+    align-items: center;
+}
+
+.left-menu {
+    position: fixed;
+    left: -170px;
+    z-index: 0;
+    background-color: rgb(245, 226, 246);
+    max-width: 200px;
+    height: 80%;
+    border-right: 20px solid rgb(152, 87, 165);
+    border-radius: 0 20px 20px 0;
+    transition: all 0.3s;
+    box-shadow: 2px 0px 0px 0px white;
+    padding: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* -ms-overflow-style: none;
+    /* IE and Edge */
+    /* scrollbar-width: none;
+    Firefox */
+}
+
+.left-menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+.left-menu::-webkit-scrollbar-track {
+    background:  rgb(245, 226, 246);
+}
+
+/* Handle */
+.left-menu::-webkit-scrollbar-thumb {
+    background: rgb(124, 71, 135);
+}
+
+/* Handle on hover */
+.left-menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.left-menu:hover {
+    left: 0;
+    transition: all 0.3s;
+}
+
+.levels__container {
+
+    text-decoration: none;
+    padding: 30px 0 0 0;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+.select {
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.select__level_lessons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.level__lesson {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.level3 .lesson__container {
+    background-color: rgb(152, 87, 165);
 }
 
 .lesson__container {
     width: 600px;
     height: auto;
     border-radius: 25px;
-    background-color: rgb(152, 87, 165);
+
     display: flex;
     flex-direction: column;
     padding: 20px;
     font-size: 20px;
     color: white;
+    margin-bottom: 30px;
 }
 
 .lesson__word {
@@ -96,12 +226,14 @@ main {
     border-bottom: 2px solid rgba(255, 255, 255, 0.325);
     padding: 10px 0;
 }
+
 .lesson__name {
     font-size: 30px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.325);
     padding: 0 0 20px 0;
     font-weight: bold;
 }
+
 .lesson__kanji {
     width: 100px;
 }
@@ -127,59 +259,86 @@ main {
         width: auto;
         font-size: 18px;
     }
+
     .lesson__name {
         font-size: 25px;
     }
+
     .lesson__kanji {
         width: 80px;
         text-wrap: nowrap;
     }
+
     .lesson__transcription {
         width: 150px;
     }
+
     .lesson__translation {
         width: 150px;
     }
-  }
+}
 
-  @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
+    main {
+        margin-top: 100px;
+    }
     .lesson__container {
         width: auto;
         font-size: 14px;
     }
+
     .lesson__name {
         font-size: 25px;
     }
+
     .lesson__kanji {
         width: 60px;
         text-wrap: nowrap;
     }
+
     .lesson__transcription {
         width: 100px;
     }
+
     .lesson__translation {
         width: 100px;
     }
-  }
+    .search {
+        height: 30px;
+        width: 50vw;
+        max-width: 300px;
+        min-width: 200px;
+        border-radius: 50px;
+        border: 0;
+        padding: 20px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    
+    }
+}
 
-  @media screen and (max-width: 390px) {
+@media screen and (max-width: 415px) {
     .lesson__container {
         width: auto;
         font-size: 12px;
         text-wrap: nowrap;
     }
+
     .lesson__name {
         font-size: 20px;
     }
+
     .lesson__kanji {
         width: 40px;
         text-wrap: nowrap;
     }
+
     .lesson__transcription {
         width: 80px;
     }
+
     .lesson__translation {
         width: 80px;
         text-wrap: wrap;
     }
-  }
+}
